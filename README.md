@@ -8,6 +8,7 @@ A céget **Elon Musk alapította** *2002-ben.*
 
 - Bemutatja Elon Muskot és céljait
 - Leírja a vállalat történetét
+- Bepillantást enged az űrkutatásba
 - Ismerteti a különböző rakétatípusokat
 - Betekintést nyújt az űrturizmusba
 - Ír az emberiség jövőjéről
@@ -25,8 +26,10 @@ A következő személyek felelősek az alábbi feladatokért:
 
 - Stíluslap
 - A vállalat története
+- Űrkutatás
 
 ### Dombi Nimród András
 
+- Főoldal
 - Űrturizmus
 - Emberiség jövője
