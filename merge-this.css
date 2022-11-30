@@ -1,0 +1,62 @@
+/* TODO: merge this with style.css */
+
+.main-section {
+    margin: 10rem 0;
+}
+
+.main-section h2 {
+    font-size: 4rem;
+}
+
+.main-visit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.main-visit-link {
+    padding: 0.3rem;
+    border: 0.2rem solid white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #64b4ff;
+    transition:  0.3s ease-in-out;
+    transition-property: margin-left, color;
+    line-height: initial;
+}
+
+.main-visit-link:hover {
+    margin-left: 2rem;
+    color: #b464ff;
+}
+
+.main-visit-link::after {
+    content: "➝";
+    font-size: 2rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.jc-flex-start {
+    justify-content: flex-start;
+}
+
+.main-section {
+    width: 80%;
+}
+
+.main-section p {
+    font-size: 1.5rem;
+    line-height: 2em;
+    text-indent: 3em;
+}

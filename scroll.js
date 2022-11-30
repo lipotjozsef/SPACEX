@@ -39,8 +39,8 @@ function hide(e) {
 }
 
 function handleScroll() {
-    const minBottom = window.innerHeight * 0.05;
-    const maxTop = window.innerHeight * 0.95;
+    const minBottom = window.innerHeight * 0.1;
+    const maxTop = window.innerHeight * 0.9;
     for (let i = 0; i < sections.length; i++) {
         const section = sections[i];
         const rect = section.getBoundingClientRect();

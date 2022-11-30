@@ -7,33 +7,43 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SpaceX</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="new-navbar.css">
+    <link rel="stylesheet" href="merge-this.css">
     <script src="scroll.js" defer></script>
 </head>
 <body>
-<div id="navbar">
-
-</div>
-<div id="content">
+<header>
+    <div class="flex full-width" id="navbar">
+        <a class="Deftransition" href="#">Vállalat</a>
+        <a class="Deftransition" href="elon.html">Elon Musk</a>
+        <a class="Deftransition" href="future.html">Emberiség jövője</a>
+        <a class="Deftransition" href="index.html">Főoldal</a>
+        <a class="Deftransition" href="rockets.html">Rakétát</a>
+        <a class="Deftransition" href="space.html">Űrkutatás</a>
+        <a class="Deftransition" href="tourism.html">Űrturizmus</a>
+    </div>
+</header>
+<div id="content" class="flex flex-column jc-flex-start">
     <!-- TODO: replace boilerplate with proper text content -->
-    <section>
+    <section class="main-section">
         <h2>Elon Musk, a cégvezető</h2>
         <div class="main-section-content">
-            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci architecto consectetur, ex, impedit ipsa laudantium magnam nam possimus provident, sint voluptatem! Dolorum explicabo laborum sed. Eum nam sapiente tempora.</div>
-            <div>Accusantium autem dicta dolore est itaque labore laudantium libero maxime, modi molestias praesentium quidem sunt voluptate? A deserunt dolores, error hic impedit incidunt itaque labore quidem quisquam! Et quod, reiciendis?</div>
-            <div>Blanditiis, cupiditate dolor, dolores eligendi est et explicabo, illum iste minus nesciunt nisi nulla odio quam quia reprehenderit sequi sit suscipit tempora veritatis voluptatum! Atque ipsa laudantium nulla obcaecati odit?</div>
-            <div>Alias aspernatur blanditiis dolores explicabo illo nisi nobis repellendus soluta. Accusamus amet animi deleniti ea eligendi et eum facere iusto magnam maxime minus natus nesciunt, nulla omnis placeat possimus qui.</div>
-            <div>Ab aliquid architecto aspernatur atque beatae distinctio et ipsam ipsum laudantium libero minus nam necessitatibus nihil nulla odit placeat provident quasi quibusdam, quis ratione saepe similique soluta, tenetur ut, veritatis!</div>
-            <div>Accusamus earum minus nam non temporibus! A, ab aliquam architecto dignissimos iusto labore magni obcaecati perferendis sunt. Aliquid dicta ex explicabo fugit nobis pariatur repellendus veritatis. Maiores odit vel velit!</div>
-            <div>Ad asperiores aspernatur culpa, distinctio dolor dolores esse est facilis fugiat ipsa iure laudantium maiores neque non nulla officia pariatur possimus qui quis rem repellat repudiandae sunt, totam ullam ut.</div>
-            <div>Amet, aut consectetur debitis, ea exercitationem expedita hic iure magni maxime nihil nulla odit perspiciatis quae, quaerat quisquam reiciendis repudiandae sed sit tenetur voluptates? Aperiam blanditiis deleniti facilis fugiat inventore.</div>
-            <div>Ad beatae culpa cum debitis dicta dolores ducimus expedita, fugit illo in iure iusto magnam minima modi necessitatibus nesciunt nulla numquam quam quidem ratione rerum sequi soluta temporibus vero voluptates.</div>
-            <div>Aliquam aliquid architecto aspernatur, atque commodi delectus deleniti deserunt dignissimos fugiat harum molestiae nihil non possimus quis sit temporibus vel. Ex illum natus perspiciatis qui quod quos reiciendis sapiente totam!</div>
+            <p>
+                Az 1971-ben született dél-afrikai származású Elon Reeve Musk számos cég alapítója.
+                <br>
+                Kanadába, majd az USA-ba költözött, ahol a Stanford Egyetemet két nap múlva otthagyta,
+                <q>hogy fontosabb problémákkal foglalkozzon, amik befolyásolják az emberiség jövőjét.</q>
+                <br>
+                2002-ben alapította meg a <b>SpaceX</b>-et, hogy forradalmasítsa az űrrepülést.
+                <br>
+                Befektetett a <b>Tesla Motors</b> autógyártó startupba, és a vállalat vezetője lett.
+            </p>
             <div class="main-visit-container">
                 <a href="elon.html" class="main-visit-link">Olvass tovább</a>
             </div>
         </div>
     </section>
-    <section>
+    <section class="main-section">
         <h2>A vállalat története</h2>
         <div class="main-section-content">
             <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda dolorum ea eaque eligendi ex id ipsa mollitia, nisi numquam, officia perferendis possimus, recusandae repudiandae sapiente tempore ut veritatis voluptate?</div>
@@ -51,7 +61,7 @@
             </div>
         </div>
     </section>
-    <section>
+    <section class="main-section">
         <h2>Űrkutatás</h2>
         <div class="main-section-content">
             <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, autem cum deleniti, deserunt doloremque earum facere id ipsa itaque possimus quas repellat sapiente totam ut velit, voluptas voluptatibus! Assumenda, cum?</div>
@@ -69,7 +79,7 @@
             </div>
         </div>
     </section>
-    <section>
+    <section class="main-section">
         <h2>Rakétatípusok</h2>
         <div class="main-section-content">
             <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci dolores eum fuga laudantium magnam, molestiae nam neque nisi pariatur quae quibusdam quos recusandae rerum sit tenetur, vel velit vitae.</div>
@@ -87,7 +97,7 @@
             </div>
         </div>
     </section>
-    <section>
+    <section class="main-section">
         <h2>Űrturizmus</h2>
         <div class="main-section-content">
             <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consectetur dicta doloremque doloribus, illum in ipsam iure modi quam quis! Accusamus consequuntur incidunt iusto magni non quo reiciendis, repellendus similique?</div>
@@ -105,7 +115,7 @@
             </div>
         </div>
     </section>
-    <section>
+    <section class="main-section">
         <h2>Az Emberiség Jövője</h2>
         <div class="main-section-content">
             <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur culpa ea fugiat id illum inventore, labore minima quaerat quas quibusdam repudiandae tempora voluptatum. Consequuntur corporis labore nostrum reiciendis vero.</div>
@@ -124,5 +134,10 @@
         </div>
     </section>
 </div>
+<footer>
+    <div class="Deftransition" id="footer">
+        ...
+    </div>
+</footer>
 </body>
 </html>
