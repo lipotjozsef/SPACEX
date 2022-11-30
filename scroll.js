@@ -4,11 +4,9 @@ const wasFadedIn = new Array(sections.length).fill(false);
 document.getElementById("content").addEventListener("scroll", handleScroll);
 
 for (let section of sections) {
-    const style = section.style;
-    style.visibility = "hidden";
-    style.transitionProperty = "opacity, transform";
-    style.opacity = "0";
-    style.transform = "translateX(-20rem)";
+    const children = section.querySelectorAll("h2, p, .main-visit-container");
+    for (let i = 0; i < children.length; i++)
+        children[i].style.transitionDelay = `${i * 100}ms`;
 }
 
 handleScroll();
@@ -22,7 +20,17 @@ function animateIn(section, i) {
     style.visibility = "visible";
     style.opacity = "1";
     style.transform = "translateX(0)";
+    if (!b)
+        animateContents(section);
     section.ontransitionend = null;
+}
+
+function animateContents(section) {
+    for (let child of section.querySelectorAll("h2, p, .main-visit-container")) {
+        const style = child.style;
+        style.opacity = "1";
+        style.transform = "translateX(0)";
+    }
 }
 
 function animateOut(section) {
@@ -39,8 +47,8 @@ function hide(e) {
 }
 
 function handleScroll() {
-    const minBottom = window.innerHeight * 0.05;
-    const maxTop = window.innerHeight * 0.95;
+    const minBottom = window.innerHeight * 0.1;
+    const maxTop = window.innerHeight * 0.9;
     for (let i = 0; i < sections.length; i++) {
         const section = sections[i];
         const rect = section.getBoundingClientRect();
