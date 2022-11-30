@@ -49,6 +49,13 @@ footer:hover #footer {
     margin: 0px;
 }
 
+.IMG300 {
+    width: 300px;
+    margin: 30px;
+    border-radius: 1em;
+    overflow: hidden;
+}
+
 .LeftFloat {
     float: left;
 }
