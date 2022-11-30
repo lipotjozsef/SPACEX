@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +9,11 @@
     <link rel="stylesheet" href="style.css">
     <script src="scroll.js" defer></script>
 </head>
-<body style=" display: block; grid-template-rows: auto 1fr; overflow: visible; width: auto; height: auto;">
-    <!-- TODO: navTilt position megjavítása -->
+
+<body>
     <header>
         <div class="text-center" id="navbar">
-            <a class="Deftransition" href="#">Vállalat</a>
+            <a class="Deftransition" href="corp.html">Vállalat</a>
             <a class="Deftransition" href="elon.html">Elon Musk</a>
             <a class="Deftransition" href="future.html">Emberiség jövője</a>
             <a class="Deftransition" href="index.html">Főoldal</a>
@@ -21,32 +22,92 @@
             <a class="Deftransition" href="tourism.html">Űrturizmus</a>
         </div>
         <div class="navTilt">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
                 <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
             </svg>
         </div>
+    </header>
+    <div id="content">
         <div class="Deftransition" id="hdrIMG">
             <h1 class="Deftransition" id="MainText">Űrkutatás</h1>
             <img src="https://cdn.mos.cms.futurecdn.net/gTkyZvdQBBN858FytHVGiG.jpg" alt="SpaceXVallalat">
         </div>
-    </header>
-    <section>
-        <div id="content">
-        </div>
-    </section>
-    <footer>
-        <div class="Deftransition" id="footer">
-            <div id="collabMembers">
-                <a href="https://github.com/lipotjozsef" target="_blank"><img class="RightFloat"
-                        src="https://avatars.githubusercontent.com/u/113012247?v=4" alt="JOCIPFP"
-                        title="lipotjozsef"></a>
-                <a href="https://github.com/kizmusnoel" target="_blank"><img class="RightFloat"
-                        src="https://avatars.githubusercontent.com/u/95743682?v=4" alt="NIMRÓDPFP"
-                        title="Axwabo"></a>
-                <a href="https://github.com/Axwabo" target="_blank"><img class="RightFloat"
-                        src="https://avatars.githubusercontent.com/u/113012212?v=4" alt="NOELPFP" title="noelkizmus"></a>
+        <section>
+            <h2>Alapjai</h2>
+            <p>
+                Konsztantyin Ciolkovszkij, Robert Goddard és Hermann Oberth a 20. század elején fektette le a rakétakutatás
+                alapjait.
+            </p>
+        </section>
+
+        <section>
+            <h2>Kezdetek</h2>
+            <p>
+                A német V-2 rakéták voltak az első szerkezetek, amelyek eljutottak a világűrbe. A második világháború után ezt a
+                technológiát és a szakembereket az Amerikai Egyesült Államok és Szovjetunió szerezte meg. Ezután indult meg a
+                két fél között a fegyverkezési verseny nukleáris fegyvereket szállító interkontinentális ballisztikus rakéták
+                (ICBM) fejlesztésében. 1961-ben az első szovjet űrhajós repülése után már köztudott volt, hogy űrverseny alakult
+                ki az Egyesült Államok és a Szovjetunió között, amely végül igazságos döntetlennel végződött.
+            </p>
+        </section>
+
+        <section>
+            <h2>Német segítség</h2>
+            <p>
+                Wernher von Braun volt a német V-2 rakéta projekt irányítója. A világháború utolsó napjaiban több társával
+                együtt feladta magát az amerikaiaknak. Az Egyesült Államokba került, ahol részt vett a rakétafejlesztésben.
+                Megkapta az amerikai állampolgárságot és az első amerikai műhold, az Explorer-1 fejlesztését és indítását végző
+                csoportot irányítója lett. Később a NASA Marshall Űrközpontjában vezette a Saturn V holdrakéta fejlesztését.
+                Különbség van a szuborbitális repülés és az orbitális repülés között. 1942. október 3-án egy német V-2
+                ballisztikus rakéta volt az első sikeresen űrbe juttatott objektum. 1946-ban egy Amerikából indított V-2-n
+                jutottak el először élőlények az űrbe.
+            </p>
+        </section>
+
+        <section>
+            <div class="PopUpImg">
+                <p>></p>
+                <img class="LeftFloat" style="width: 300px;" src="https://upload.wikimedia.org/wikipedia/commons/b/be/Sputnik_asm.jpg" alt="Szputnyik";>
             </div>
-        </div>
-    </footer>
+            <h2>Szovjet előrenyomulás</h2>
+            <p>
+                Szergej Koroljov vezetésével fejlesztették ki a Szovjetunióban az R-7 Szemjorka és a Szojuz hordozórakétákat,
+                amelyeket napjainkban is használnak. Azonosságát haláláig államtitokként kezelték, még saját családja sem
+                tudhatta, hogy ő felelt a szovjet űrprogram megvalósításáért.
+                Az űrrepülés szemszögéből, a legtöbbször használt meghatározás szerint a világűr 100 km magasságban kezdődik. Az
+                Egyesült Államokban használják néha az 50 mérföldes meghatározást is. Az első sikeres orbitális indítás a
+                személyzet nélküli szovjet Szputnyik–1 küldetése volt 1957. október 4-én. Lajka volt az első pályára állított
+                állat az év november 3-án. Az első ember által végzett repülés a Vosztok–1 volt Jurij Gagarinnal 1961. április
+                12-én.
+            </p>
+        </section>
+
+        <section>
+            <h2>SpaceX része a tortából</h2>
+            <p>
+                2004. június 21-én a SpaceShipOne volt az első privát emberszállító űrhajó, ez utóbbi szintén csak szuborbitális
+                repülést hajtott végre. 2008. szeptember 29-én a SpaceX Falcon–1 hordozórakétája volt az első teljesen
+                magánfinanszírozású rakéta, amely Föld körüli pályára állt.
+            </p>
+        </section>
+
+        <footer>
+            <div class="Deftransition" id="footer">
+                <div id="collabMembers">
+                    <a href="https://github.com/lipotjozsef" target="_blank"><img class="RightFloat"
+                            src="https://avatars.githubusercontent.com/u/113012247?v=4" alt="JOCIPFP"
+                            title="lipotjozsef"></a>
+                    <a href="https://github.com/kizmusnoel" target="_blank"><img class="RightFloat"
+                            src="https://avatars.githubusercontent.com/u/95743682?v=4" alt="NIMRÓDPFP"
+                            title="Axwabo"></a>
+                    <a href="https://github.com/Axwabo" target="_blank"><img class="RightFloat"
+                            src="https://avatars.githubusercontent.com/u/113012212?v=4" alt="NOELPFP"
+                            title="noelkizmus"></a>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
+
 </html>
