@@ -61,6 +61,10 @@ footer:hover #footer {
     text-indent: 3em;
 }
 
+.to-main-page {
+    font-size: 200%;
+}
+
 .Deftransition,
 .Deftransition:hover,
 .Deftransition:before,
@@ -187,7 +191,6 @@ footer:hover #footer {
 #navbar a {
     position: relative;
     overflow: hidden;
-    font-size: 15px;
     font-weight: bold;
     display: inline-block;
     padding: 0 20px;
@@ -235,6 +238,7 @@ footer:hover #footer {
 
 #hdrIMG img {
     width: 100%;
+    min-width: 1150px;
     position: absolute;
     bottom: 0;
 }
@@ -253,4 +257,17 @@ footer:hover #footer {
     border-radius: 100%;
     display: inline-block;
     width: 35px;
+}
+
+/* Responsivitás telefonra*/
+@media screen and (max-width: 600px) {
+    #hdrIMG img { left: -50%; }
+    #MainText {
+        box-shadow: inset 400px 0 0 0 #000;
+        position: absolute;
+        color: #fff;
+    }
+    #footer { bottom: 0; }
+    #navbar a { padding: 0 px; }
+    #content { line-height: normal; }
 }
