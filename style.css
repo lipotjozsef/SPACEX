@@ -91,47 +91,86 @@ footer:hover #footer {
     fill: #161B22;
 }
 
-/* .main-visit-link {
-    overflow: hidden;
-    position: relative;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    padding: 20px;
-    display: inline-block;
-    border: solid 2px #fff;
+.main-section {
+    margin: 10rem 0;
 }
 
-.main-visit-link::before {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 100%;
-    bottom: 100%;
-    left: -10px;
-    background-color: #fff;
+.main-section h2 {
+    font-size: 4rem;
+}
+
+.main-visit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.main-visit-link {
+    padding: 0.3rem;
+    border: 0.2rem solid white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #64b4ff;
+    transition:  0.3s ease-in-out;
+    transition-property: margin-left, color;
+    line-height: initial;
 }
 
 .main-visit-link:hover {
-    color: #000;
+    margin-left: 2rem;
+    color: #b464ff;
 }
 
-.main-visit-link:hover::before {
-    bottom: 0;
-} */
+.main-visit-link::after {
+    content: "➝";
+    font-size: 2rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.jc-flex-start {
+    justify-content: flex-start;
+}
+
+.main-section {
+    width: 80%;
+}
+
+.main-section p {
+    font-size: 1.5rem;
+    line-height: 2em;
+    text-indent: 3em;
+}
 
 #navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
     background-color: #161b22;
     padding: 20px 0;
 }
 
+.full-width {
+    width: 100%;
+}
+
 #navbar a {
-    overflow: hidden;
     font-size: 15px;
     font-weight: bold;
     display: inline-block;
     padding: 0 20px;
-    position: relative;
 }
 
 #navbar a::before {
