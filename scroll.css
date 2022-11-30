@@ -1,0 +1,14 @@
+.main-section {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-20rem);
+    transition-duration: 1s;
+    transition-property: opacity, transform;
+}
+
+.main-section :is(p, h2, .main-visit-container) {
+    opacity: 0;
+    transform: translateX(-20rem);
+    transition-duration: 1s;
+    transition-property: opacity, transform;
+}
