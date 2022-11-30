@@ -57,6 +57,10 @@ footer:hover #footer {
     float: right;
 }
 
+.indent {
+    text-indent: 3em;
+}
+
 .Deftransition,
 .Deftransition:hover,
 .Deftransition:before,
@@ -149,7 +153,21 @@ footer:hover #footer {
 .main-section p {
     font-size: 1.5rem;
     line-height: 2em;
-    text-indent: 3em;
+}
+
+.main-section {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-20rem);
+    transition-duration: 1s;
+    transition-property: opacity, transform;
+}
+
+.main-section :is(p, h2, .main-visit-container) {
+    opacity: 0;
+    transform: translateX(-20rem);
+    transition-duration: 1s;
+    transition-property: opacity, transform;
 }
 
 #navbar {
@@ -167,6 +185,8 @@ footer:hover #footer {
 }
 
 #navbar a {
+    position: relative;
+    overflow: hidden;
     font-size: 15px;
     font-weight: bold;
     display: inline-block;
