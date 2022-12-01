@@ -92,7 +92,7 @@ footer:hover #footer {
     width: 100%;
     overflow: hidden;
     line-height: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 .navTilt svg {
