@@ -48,7 +48,7 @@ footer:hover #footer {
 
 .IMG500 {
     width: 500px;
-    margin: 0px;
+    margin: 0;
 }
 
 .IMG300 {
@@ -75,9 +75,7 @@ footer:hover #footer {
 }
 
 .Deftransition,
-.Deftransition:hover,
-.Deftransition:before,
-.Deftransition:hover::before {
+.Deftransition::before{
     transition: 0.3s ease-in-out;
     text-decoration: none;
     color: #fff;
@@ -88,7 +86,6 @@ footer:hover #footer {
     position: absolute;
 }
 
-/* AUTO GENERATED FROM https://www.shapedivider.app/ */
 .navTilt {
     position: absolute;
     width: 100%;
@@ -277,6 +274,6 @@ footer:hover #footer {
         color: #fff;
     }
     #footer { bottom: 0; }
-    #navbar a { padding: 0 px; }
+    #navbar a { padding: 0; }
     #content { line-height: normal; }
 }
