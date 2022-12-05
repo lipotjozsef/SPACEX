@@ -111,6 +111,55 @@ footer:hover #footer {
 
 .main-section {
     margin: 10rem 0;
+    position: relative;
+    padding: 2rem;
+    --img: "";
+    --bg-op: 0;
+}
+
+.main-section::before {
+    content: "";
+    position: absolute;
+    background-image: var(--img);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center;
+    width: 100%;
+    height: 100%;
+    opacity: var(--bg-op);
+    transition: opacity 2s ease-out 0.5s;
+}
+
+.bg-center::before {
+    background-position-x: center;
+}
+
+.bg-right::before {
+    background-position-x: right;
+}
+
+#elon.main-section::before {
+    --img: url("images/index/elon.png");
+}
+
+#corp.main-section::before {
+    --img: url("images/index/spacex_logo.png");
+}
+
+#space.main-section::before {
+    --img: url("images/index/space.png");
+}
+
+#rockets.main-section::before {
+    --img: url("images/index/rockets.png");
+}
+
+#tourism.main-section::before {
+    --img: url("images/index/tourism.png");
+}
+
+#future.main-section::before {
+    --img: url("images/index/future.png");
 }
 
 .main-section h2 {
