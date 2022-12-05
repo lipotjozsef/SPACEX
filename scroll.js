@@ -3,17 +3,37 @@ const wasFadedIn = new Array(sections.length).fill(false);
 
 document.getElementById("content").addEventListener("scroll", handleScroll);
 
-for (let section of sections) {
-    const children = section.querySelectorAll("h2, p, .main-visit-container");
-    for (let i = 0; i < children.length; i++)
-        children[i].style.transitionDelay = `${i * 100}ms`;
+function handleTransitionEnd(i) {
+    return e => {
+        if (!e.target.matches("section") || e.pseudoElement !== "")
+            return;
+        if (e.propertyName !== "opacity")
+            return;
+        const s = e.target.style;
+        if (s.opacity === "0") {
+            if (!wasFadedIn[i])
+                animateContents(e.target, false);
+            s.visibility = "hidden";
+        } else {
+            s.visibility = "visible";
+            wasFadedIn[i] = true;
+        }
+    };
 }
 
-handleScroll();
+for (let i = 0; i < sections.length; i++) {
+    const section = sections[i];
+    const children = section.querySelectorAll("h2, p, .main-visit-container");
+    for (let j = 0; j < children.length; j++)
+        children[j].style.transitionDelay = `${j * 100}ms`;
+    section.ontransitionend = handleTransitionEnd(i);
+}
+
+setTimeout(handleScroll, 100);
 
 function animateIn(section, i) {
     const style = section.style;
-    if (style.visibility === "visible")
+    if (style.opacity === "1")
         return;
     const b = wasFadedIn[i];
     style.transitionDuration = b ? "500ms" : "1s";
@@ -21,41 +41,35 @@ function animateIn(section, i) {
     style.opacity = "1";
     style.transform = "translateX(0)";
     if (!b)
-        animateContents(section);
-    section.ontransitionend = null;
+        animateContents(section, true);
 }
 
-function animateContents(section) {
+function animateContents(section, isIn) {
     for (let child of section.querySelectorAll("h2, p, .main-visit-container")) {
         const style = child.style;
-        style.opacity = "1";
-        style.transform = "translateX(0)";
+        style.opacity = isIn ? "1" : "0";
+        style.transform = isIn ? "translateX(0)" : "translateX(-20rem)";
     }
+    section.style.setProperty("--bg-op", isIn ? "0.5" : "0");
 }
 
 function animateOut(section) {
     const style = section.style;
-    if (style.visibility === "hidden")
+    if (style.opacity === "0")
         return;
     style.transitionDuration = "500ms";
     style.opacity = "0";
-    section.ontransitionend = hide;
-}
-
-function hide(e) {
-    e.target.style.visibility = "hidden";
 }
 
 function handleScroll() {
-    const minBottom = window.innerHeight * 0.1;
-    const maxTop = window.innerHeight * 0.9;
+    const minBottom = window.innerHeight * 0.15;
+    const maxTop = window.innerHeight * 0.85;
     for (let i = 0; i < sections.length; i++) {
         const section = sections[i];
         const rect = section.getBoundingClientRect();
-        if (rect.top < maxTop && rect.bottom > minBottom) {
+        if (rect.top < maxTop && rect.bottom > minBottom)
             animateIn(section, i);
-            wasFadedIn[i] = true;
-        } else
+        else
             animateOut(section);
     }
 }
