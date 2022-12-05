@@ -9,6 +9,31 @@
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="style.css">
     <script src="scroll.js" defer></script>
+    <style>
+        .main-section {
+            position: relative;
+            --img: "";
+        }
+
+        .main-section::before {
+            content: "";
+            position: absolute;
+            background-image: var(--img);
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+        }
+
+        #elon::before {
+            --img: url("images/index/elon.png");
+        }
+
+        #corp::before {
+            --img: url("https://studentwork.prattsi.org/infovis/wp-content/uploads/sites/3/2021/02/spacex-tesmanian_1600x.jpg");
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -23,8 +48,8 @@
     </div>
 </header>
 <div id="content" class="flex flex-column jc-flex-start">
-    <section class="main-section">
-        <h2>Elon Musk, a cégvezető</h2>
+    <section class="main-section" id="elon">
+        <h2 class="main-padding-left">Elon Musk, a cégvezető</h2>
         <div class="main-section-content">
             <p class="indent">
                 Az 1971-ben született dél-afrikai származású Elon Reeve Musk számos cég alapítója.
@@ -44,7 +69,7 @@
             </div>
         </div>
     </section>
-    <section class="main-section">
+    <section class="main-section" id="corp">
         <h2>A vállalat története</h2>
         <div class="main-section-content">
             <p class="indent">
