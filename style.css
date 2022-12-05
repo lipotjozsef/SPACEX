@@ -37,6 +37,10 @@ footer:hover #footer {
     border-bottom-right-radius: 1em;
 }
 
+.DefLink {
+    color: #fff;
+}
+
 .text-center {
     text-align: center;
     margin: 0 auto;
