@@ -46,6 +46,11 @@ footer:hover #footer {
     margin: 0 auto;
 }
 
+.CenterFlex {
+    display: flex;
+    justify-content: center;
+}
+
 .no-margin {
     margin: 0;
 }
@@ -266,6 +271,20 @@ footer:hover #footer {
     width: 100%;
 }
 
+.LeftFullIMG {
+    overflow: auto;
+    margin-top: 100px;
+    background-color: #222;
+}
+
+.LeftFullIMG section { padding: 20px; }
+
+.FlexDiv {
+    overflow: hidden;
+    width: 50%;
+    margin-right: 5%;
+}
+
 #navbar {
     display: flex;
     justify-content: space-evenly;
@@ -349,6 +368,7 @@ footer:hover #footer {
 
 /* Responsivitás telefonra*/
 @media screen and (max-width: 600px) {
+    .FlexDiv {width: 100%; margin-bottom: 100px;}
     #hdrIMG img { left: -50%; }
     #MainText {
         box-shadow: inset 400px 0 0 0 #000;
