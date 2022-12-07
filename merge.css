@@ -1,0 +1,24 @@
+.rocketTable {
+    border: 3px solid white;
+    border-collapse: collapse;
+    margin-left: 20px;
+    scale: 85%;
+    background-color: rgb(36, 35, 35);
+    cursor: context-menu;
+}
+
+.rocketTable td {
+    border: 1px solid white;
+    padding: 5px;
+    transition: 0.2s;
+}
+
+.rocketTable td:hover {
+    background-color: rgb(50, 69, 134);
+}
+
+.rocketTable .title {
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+}
