@@ -175,17 +175,21 @@ footer:hover #footer {
 
 .main-visit-link {
     padding: 0.3rem;
-    border: 0.2rem solid white;
     font-size: 3rem;
     font-weight: bold;
     text-decoration: none;
     color: #64b4ff;
-    transition:  0.3s ease-in-out;
-    transition-property: margin-left, color;
+    transition: 0.3s ease-in-out;
     line-height: initial;
+    border: none;
+    background-color: rgba(100, 10, 100, 0.4);
+    transition-property: margin-left, color, background-color;
+    border-top-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
 }
 
 .main-visit-link:hover {
+    background-color: rgba(10, 10, 100, 0.8);
     margin-left: 2rem;
     color: #b464ff;
 }
