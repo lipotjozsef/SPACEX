@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr 10px;
     overflow: hidden;
     width: 100vw;
     height: 100vh;
@@ -17,15 +17,19 @@ span:hover {
     color: #deb887;
 }
 
+
 footer {
     overflow: hidden;
     bottom: 0;
+    position: fixed;
+    width: 100%;
 }
 
 footer:hover #footer {
     transition: 0.3s ease-in;
     bottom: 0;
 }
+
 
 #content {
     overflow-y: auto;
@@ -94,11 +98,13 @@ footer:hover #footer {
 
 .navTilt {
     position: absolute;
-    transform: rotateY(180deg);
-    width: 100%;
+    width: 100vw;
+    left: 0;
     overflow: hidden;
-    line-height: 0;
     z-index: 2;
+    height: 40px;
+    background-color: #161b22;
+    clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
 }
 
 .navTilt svg {
@@ -167,6 +173,8 @@ footer:hover #footer {
 
 .main-section h2 {
     font-size: 4rem;
+    text-align: left;
+    word-wrap: anywhere;
 }
 
 .main-visit-container {
@@ -373,6 +381,12 @@ footer:hover #footer {
 
 /* Responsivitás telefonra*/
 @media screen and (max-width: 600px) {
+    body { grid-template-rows: auto 1fr 40px; }
+    .main-visit-link:hover {
+        background-color: rgba(10, 10, 100, 0.8);
+        margin-left: 0;
+        color: #b464ff;
+    }
     .FlexDiv {width: 100%; margin-bottom: 100px;}
     #hdrIMG img { left: -50%; }
     #MainText {
