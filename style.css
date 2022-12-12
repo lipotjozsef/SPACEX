@@ -62,10 +62,15 @@ footer:hover #footer {
 }
 
 .IMG300 {
+    transition: 0.4s;
     width: 300px;
     margin: 30px;
     border-radius: 1em;
     overflow: hidden;
+}
+
+.IMG300:hover {
+    scale: 1.1;
 }
 
 .LeftFloat {
@@ -273,6 +278,20 @@ footer:hover #footer {
     text-align: center;
 }
 
+.infoCard {
+    border: 2px solid white;
+    border-radius: 7px;
+    float: right;
+    padding: 10px;
+    background-color: rgb(36, 35, 35);
+    margin-bottom: 30px;
+    transition: 0.4s;
+}
+
+.infoCard:hover {
+    background-color: rgb(50, 50, 50);
+}
+
 .full-width {
     width: 100%;
 }
@@ -354,6 +373,15 @@ footer:hover #footer {
     box-shadow: inset 400px 0 0 0 #000;
     position: absolute;
     color: #fff;
+}
+
+#starlinkIMG {
+    width: 200px;
+    transition: 0.3s;
+}
+
+#starlinkIMG:hover {
+    filter: brightness(0.7);
 }
 
 #hdrIMG img {
