@@ -1,7 +1,22 @@
+class ParallaxRocket {
+    element;
+    speedMultiplier = 1;
+
+    constructor(element) {
+        this.element = element;
+        this.speedMultiplier = Math.random() * 0.5 + 0.5;
+    }
+}
+
 const sections = document.querySelectorAll("section");
 const wasFadedIn = new Array(sections.length).fill(false);
 
+window.addEventListener("resize", handleResize);
 document.getElementById("content").addEventListener("scroll", handleScroll);
+
+function handleResize() {
+    handleScroll();
+}
 
 function handleTransitionEnd(i) {
     return e => {
