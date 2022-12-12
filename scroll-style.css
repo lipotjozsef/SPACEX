@@ -1,0 +1,11 @@
+#parallaxContainer {
+    position: absolute;
+    pointer-events: none;
+    width: 100vw;
+}
+
+.parallax-scroll-rocket {
+    width: 10vw;
+    position: absolute;
+    opacity: 0.5;
+}

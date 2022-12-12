@@ -5,18 +5,33 @@ class ParallaxRocket {
     constructor(element) {
         this.element = element;
         this.speedMultiplier = Math.random() * 0.5 + 0.5;
+        const isLeft = Math.random() > 0.5;
+        if (isLeft)
+            this.element.style.left = `${Math.random() * 5}vw`;
+        else
+            this.element.style.right = `${Math.random() * 5}vw`;
+    }
+}
+
+const rockets = [];
+
+function createRockets() {
+    const amount = document.querySelectorAll(".main-section").length * 2;
+    const container = document.getElementById("parallaxContainer");
+    const image = document.createElement("img");
+    image.classList.add("parallax-scroll-rocket");
+    image.src = "images/rocket-flat.png";
+    for (let i = 0; i < amount; i++) {
+        const clone = image.cloneNode(false);
+        container.appendChild(clone);
+        rockets.push(new ParallaxRocket(clone));
     }
 }
 
 const sections = document.querySelectorAll("section");
 const wasFadedIn = new Array(sections.length).fill(false);
-
-window.addEventListener("resize", handleResize);
+window.addEventListener("resize", handleScroll);
 document.getElementById("content").addEventListener("scroll", handleScroll);
-
-function handleResize() {
-    handleScroll();
-}
 
 function handleTransitionEnd(i) {
     return e => {
@@ -77,6 +92,14 @@ function animateOut(section) {
 }
 
 function handleScroll() {
+    if (rockets.length < 1)
+        createRockets();
+    const content = document.getElementById("content");
+    const topPerElement = content.scrollHeight / (rockets.length + 1);
+    for (let i = 0; i < rockets.length; i++) {
+        const rocket = rockets[i];
+        rocket.element.style.top = `${topPerElement * i - content.scrollTop * rocket.speedMultiplier}px`;
+    }
     const minBottom = window.innerHeight * 0.15;
     const maxTop = window.innerHeight * 0.85;
     for (let i = 0; i < sections.length; i++) {
