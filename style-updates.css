@@ -1,0 +1,58 @@
+/* TODO: replace rules with these in style.css */
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #010409;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto 1fr 10px;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+footer {
+    overflow: hidden;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+#content {
+    overflow-y: auto;
+    background-color: #0d1117;
+    text-align: justify;
+    padding: 0 24px;
+}
+
+.navTilt {
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    overflow: hidden;
+    z-index: 2;
+    height: 40px;
+    background-color: #161b22;
+    clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
+}
+
+.main-section h2 {
+    font-size: 4rem;
+    text-align: left;
+    word-wrap: anywhere;
+}
+
+@media screen and (max-width: 600px) {
+    /* TODO: append the following inside the @media for responsive design */
+    body {
+        grid-template-rows: auto 1fr 40px;
+    }
+
+    .main-visit-link:hover {
+        background-color: rgba(10, 10, 100, 0.8);
+        margin-left: 0;
+        color: #b464ff;
+    }
+}
