@@ -11,6 +11,8 @@ class ParallaxRocket {
 const rockets = [];
 const sections = document.querySelectorAll("section");
 const wasFadedIn = new Array(sections.length).fill(false);
+const speedMultipliers = [ 0.4, 0.45, 0.5, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85 ];
+const offsets = [ -5, -4, -3, -2, -1, 1, 2, 3, 4, 5 ];
 
 function getRandomAndRemove(array) {
     if (array.length < 1)
@@ -27,24 +29,28 @@ function createRockets() {
     const image = document.createElement("img");
     image.classList.add("parallax-scroll-rocket");
     image.src = "images/rocket-flat.png";
-    const multipliers = [ 0.4, 0.45, 0.5, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85 ];
-    const offsets = [ -0.5, -0.4, -0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5 ];
     for (let i = 0; i < amount; i++) {
-        const multiplier = getRandomAndRemove(multipliers);
+        const multiplier = getRandomAndRemove(speedMultipliers);
         const offset = getRandomAndRemove(offsets);
         const div = document.createElement("div");
         div.classList.add("parallax-scroll-rocket-container");
         div.style.top = `${i / amount * 120 + 10}vh`;
         if (offset < 0)
-            div.style.left = `${-offset * 10}vw`;
+            div.style.left = `${-offset}vw`;
         else
-            div.style.right = `${offset * 10}vw`;
+            div.style.right = `${offset}vw`;
         const clone = image.cloneNode(false);
         clone.style.rotate = `${Math.floor(Math.random() * -90)}deg`;
-        clone.style.scale = `${multiplier * 0.8}`;
+        clone.style.scale = `${multiplier * 0.5}`;
         div.appendChild(clone);
         container.appendChild(div);
+        const targetOpacity = getComputedStyle(clone).opacity;
+        clone.style.opacity = "0";
         rockets.push(new ParallaxRocket(div, multiplier));
+        clone.animate(
+            [ { opacity: targetOpacity, scale: `${multiplier * 0.8}` } ],
+            { duration: 1000, delay: i * 300, fill: "forwards", easing: "ease-out" }
+        );
     }
 }
 
@@ -132,6 +138,7 @@ function handleScroll() {
     }
 }
 
+
 for (let i = 0; i < sections.length; i++) {
     const section = sections[i];
     const children = section.querySelectorAll("h2, p, .main-visit-container");
@@ -144,3 +151,4 @@ assignScrollButtonEvents();
 setTimeout(handleScroll, 100);
 window.addEventListener("resize", handleScroll);
 document.getElementById("content").addEventListener("scroll", handleScroll);
+document.querySelector("h1")?.style.setProperty("opacity", "1");
