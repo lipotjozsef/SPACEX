@@ -5,11 +5,6 @@ class ParallaxRocket {
     constructor(element, speedMultiplier) {
         this.element = element;
         this.speedMultiplier = speedMultiplier;
-        const isLeft = Math.random() > 0.5;
-        if (isLeft)
-            this.element.style.left = `${Math.random() * 5}vw`;
-        else
-            this.element.style.right = `${Math.random() * 5}vw`;
     }
 }
 
@@ -17,19 +12,39 @@ const rockets = [];
 const sections = document.querySelectorAll("section");
 const wasFadedIn = new Array(sections.length).fill(false);
 
+function getRandomAndRemove(array) {
+    if (array.length < 1)
+        return null;
+    const i = Math.floor(Math.random() * array.length);
+    const value = array[i];
+    array.splice(i, 1);
+    return value;
+}
+
 function createRockets() {
-    // TODO: this sucks
-    const amount = document.querySelectorAll(".main-section").length * 2;
+    const amount = document.querySelectorAll(".main-section").length;
     const container = document.getElementById("parallaxContainer");
     const image = document.createElement("img");
     image.classList.add("parallax-scroll-rocket");
     image.src = "images/rocket-flat.png";
-    let multiplier = 0.2;
+    const multipliers = [ 0.4, 0.45, 0.5, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85 ];
+    const offsets = [ -0.5, -0.4, -0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5 ];
     for (let i = 0; i < amount; i++) {
-        multiplier += Math.random() * 0.2 + 0.2;
+        const multiplier = getRandomAndRemove(multipliers);
+        const offset = getRandomAndRemove(offsets);
+        const div = document.createElement("div");
+        div.classList.add("parallax-scroll-rocket-container");
+        div.style.top = `${i / amount * 120 + 10}vh`;
+        if (offset < 0)
+            div.style.left = `${-offset * 10}vw`;
+        else
+            div.style.right = `${offset * 10}vw`;
         const clone = image.cloneNode(false);
-        container.appendChild(clone);
-        rockets.push(new ParallaxRocket(clone, multiplier));
+        clone.style.rotate = `${Math.floor(Math.random() * -90)}deg`;
+        clone.style.scale = `${multiplier * 0.8}`;
+        div.appendChild(clone);
+        container.appendChild(div);
+        rockets.push(new ParallaxRocket(div, multiplier));
     }
 }
 
@@ -45,9 +60,8 @@ function assignScrollButtonEvents() {
     for (let i = 0; i < array.length - 1; i++) {
         const e = array[i];
         const btn = e.querySelector(".main-section-scroll-arrow");
-        if (btn == null)
-            continue;
-        btn.onclick = scrollToSection(array[i + 1]);
+        if (btn != null)
+            btn.onclick = scrollToSection(array[i + 1]);
     }
 }
 
@@ -67,14 +81,6 @@ function handleTransitionEnd(i) {
             wasFadedIn[i] = true;
         }
     };
-}
-
-for (let i = 0; i < sections.length; i++) {
-    const section = sections[i];
-    const children = section.querySelectorAll("h2, p, .main-visit-container");
-    for (let j = 0; j < children.length; j++)
-        children[j].style.transitionDelay = `${j * 100}ms`;
-    section.ontransitionend = handleTransitionEnd(i);
 }
 
 function animateIn(section, i) {
@@ -111,11 +117,9 @@ function handleScroll() {
     if (rockets.length < 1)
         createRockets();
     const content = document.getElementById("content");
-    const topPerElement = content.scrollHeight / rockets.length * 3;
-    for (let i = 0; i < rockets.length; i++) {
-        const rocket = rockets[i];
-        rocket.element.style.top = `${topPerElement * i - content.scrollTop * rocket.speedMultiplier * (1080 / window.innerHeight)}px`;
-    }
+    const topPerElement = window.innerHeight / content.scrollHeight;
+    for (const rocket of rockets)
+        rocket.element.style.transform = `translateY(-${topPerElement * content.scrollTop * rocket.speedMultiplier}px)`;
     const minBottom = window.innerHeight * 0.15;
     const maxTop = window.innerHeight * 0.85;
     for (let i = 0; i < sections.length; i++) {
@@ -126,6 +130,14 @@ function handleScroll() {
         else
             animateOut(section);
     }
+}
+
+for (let i = 0; i < sections.length; i++) {
+    const section = sections[i];
+    const children = section.querySelectorAll("h2, p, .main-visit-container");
+    for (let j = 0; j < children.length; j++)
+        children[j].style.transitionDelay = `${j * 100}ms`;
+    section.addEventListener("transitionend", handleTransitionEnd(i));
 }
 
 assignScrollButtonEvents();
