@@ -1,0 +1,11 @@
+.IMG300 {
+    border: 5px solid transparent;
+}
+
+.IMG300:hover {
+    border: 5px solid white;
+}
+
+.rocketTable {
+    cursor: default;
+}
