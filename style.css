@@ -64,6 +64,7 @@ footer:hover #footer {
 
 .IMG300 {
     transition: 0.4s;
+    border: 5px solid transparent;
     width: 300px;
     margin: 30px;
     border-radius: 1em;
@@ -72,7 +73,7 @@ footer:hover #footer {
 
 .IMG300:hover {
     scale: 1.1;
-    
+    border: 5px solid white;
 }
 
 .LeftFloat {
@@ -290,7 +291,7 @@ footer:hover #footer {
     margin-left: 20px;
     scale: 85%;
     background-color: rgb(36, 35, 35);
-    cursor: context-menu;
+    cursor: default;
 }
 
 .rocketTable td {
