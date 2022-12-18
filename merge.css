@@ -1,0 +1,9 @@
+.main-visit-link {
+    background-color: rgb(48 48 48);
+    color: white;
+}
+
+.main-visit-link:hover {
+    background-color: rgb(99, 99, 99);
+    color: white;
+}
