@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Űrturizmus</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="new-styles.css">
+    <link rel="stylesheet" href="tourism-style.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
@@ -36,6 +36,7 @@
             Manapság ez korántsem probléma, hiszen a rakéták képesek a Marsra utazni.
         </p>
     </section>
+    <hr>
     <section style="height: 300px;">
         <img src="images/tourism_missions.jpg" alt="Küldetések" class="LeftFloat IMG300" style="margin: 0 30px 0 0;"/>
         <p>
@@ -48,15 +49,17 @@
             <li>Mars</li>
         </ul>
     </section>
-    <section style="margin: 3rem; text-align: center; font-size: 2rem;">
+    <hr>
+    <section style="clear: both; text-align: center; font-size: 2rem;">
         <p>
             <q>A reggeli ébredés után azt szeretnéd gondolni, hogy a jövő nagyszerű lesz - és ezt jelenti űrhajós civilizációnak lenni.
                 Erről szól: hiszünk abban, hogy a jövő jobb lesz, mint a múlt.
                 És nem tudom, hogy mi lehet izgalmasabb, mint kimenni oda és a csillagok között lenni.
             </q>
         </p>
-        <p class="no-margin">- Elon Musk</p>
+        <p>- Elon Musk</p>
     </section>
+    <hr>
     <section>
         <h2>Miért a Mars?</h2>
         <img src="images/mars_why.png" alt="Mars" class="RightFloat IMG500">
@@ -66,30 +69,50 @@
             A légkör főként CO<sub>2</sub>-ból, némi nitrogénből és argonból, valamint egy-két másik nyomású elemből áll, ami azt jelenti, hogy a Marson növényeket tudunk termeszteni a légkör tömörítésével.
             A gravitáció a földi gravitáció 38%-a, így könnyen fel tudnál emelni nehéz dolgokat és ugrálni is tudsz.
         </p>
-        <table class="rocketTable mars-stats">
-            <tbody>
-                <tr>
-                    <td>Átmérő</td>
-                    <td>6791 km</td>
-                </tr>
-                <tr>
-                    <td>Naphossz</td>
-                    <td>24 óra 37 perc</td>
-                </tr>
-                <tr>
-                    <td>Gravitációs Erő</td>
-                    <td>A földi 38%-a</td>
-                </tr>
-                <tr>
-                    <td>Átlagos Távolság a Földtől</td>
-                    <td>225M km</td>
-                </tr>
-                <tr>
-                    <td>Életkor</td>
-                    <td>4,5 milliárd év</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="flex">
+            <table class="rocketTable mars-stats">
+                <tbody>
+                    <tr>
+                        <td>Átmérő</td>
+                        <td>6791 km</td>
+                    </tr>
+                    <tr>
+                        <td>Naphossz</td>
+                        <td>24 óra 37 perc</td>
+                    </tr>
+                    <tr>
+                        <td>Gravitációs Erő</td>
+                        <td>A földi 38%-a</td>
+                    </tr>
+                    <tr>
+                        <td>Átlagos Távolság a Földtől</td>
+                        <td>225M km</td>
+                    </tr>
+                    <tr>
+                        <td>Életkor</td>
+                        <td>4,5 milliárd év</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section id="marsNumberStatsFlex">
+        <div>
+            <span class="tourism-number">6</span>
+            <span class="tourism-text">hónap eljutni a Marsra</span>
+        </div>
+        <div>
+            <span class="tourism-number">2</span>
+            <span class="tourism-text">Hold</span>
+        </div>
+        <div>
+            <span class="tourism-number">14</span>
+            <span class="tourism-text">keringő műhold</span>
+        </div>
+    </section>
+    <section class="flex flex-column">
+        <img src="images/mars_path.svg" alt="" style="width: 80%;">
+        <!-- TODO: 6 hoverable points-->
     </section>
 </div>
 <footer>

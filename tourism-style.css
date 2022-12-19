@@ -1,0 +1,27 @@
+#marsNumberStatsFlex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+    padding: 5rem;
+    clear: both;
+}
+
+#marsNumberStatsFlex > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.tourism-number {
+    font-size: 5rem;
+}
+
+.tourism-text {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
