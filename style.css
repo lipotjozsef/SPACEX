@@ -193,26 +193,24 @@ footer:hover #footer {
     align-items: center;
     margin-top: 3rem;
 }
-
 .main-visit-link {
     padding: 0.3rem;
     font-size: 3rem;
     font-weight: bold;
     text-decoration: none;
-    color: #64b4ff;
+    color: white;
     transition: 0.3s ease-in-out;
     line-height: initial;
     border: none;
-    background-color: rgba(100, 10, 100, 0.4);
+    background-color: rgba(48, 48, 48, 0.7);
     transition-property: margin-left, color, background-color;
     border-top-left-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
 }
 
 .main-visit-link:hover {
-    background-color: rgba(10, 10, 100, 0.8);
+    background-color: rgb(99, 99, 99);
     margin-left: 2rem;
-    color: #b464ff;
 }
 
 .main-visit-link::after {
@@ -448,6 +446,21 @@ footer:hover #footer {
     width: 35px;
 }
 
+/* TOURISM.HTML ----------------------------------------------------- */
+.main-h1 {
+    margin-top: 1.5em;
+    font-size: 5rem;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.mars-stats {
+    font-size: 2rem;
+}
+
+.mars-stats td:last-child {
+    text-align: right;
+}
 /* Responsivitás telefonra*/
 @media screen and (max-width: 600px) {
     body { grid-template-rows: auto 1fr 40px; }
