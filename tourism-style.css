@@ -26,3 +26,36 @@
 .uppercase {
     text-transform: uppercase;
 }
+
+#tourismStepsList {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5rem;
+    padding: 5rem;
+}
+
+#tourismStepsList li {
+    text-align: left;
+    list-style-type: decimal-leading-zero;
+    transition: opacity 0.3s;
+    --text-translate: 1rem;
+    --op: 0;
+}
+
+#tourismStepsList > li:hover {
+    --op: 1;
+    --text-translate: 0;
+}
+
+#tourismStepsList:has(li:hover) li:not(:hover) {
+    opacity: 0.5;
+}
+
+.tourism-step-item-description {
+    transition: 0.3s ease-in-out;
+    transition-property: opacity, translate;
+    font-size: 0.8rem;
+    color: gray;
+    translate: var(--text-translate) 0;
+    opacity: var(--op);
+}
