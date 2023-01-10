@@ -93,7 +93,7 @@ footer:hover #footer {
 }
 
 .Deftransition,
-.Deftransition::before{
+.Deftransition::before {
     transition: 0.3s ease-in-out;
     text-decoration: none;
     color: #fff;
@@ -193,6 +193,7 @@ footer:hover #footer {
     align-items: center;
     margin-top: 3rem;
 }
+
 .main-visit-link {
     padding: 0.3rem;
     font-size: 3rem;
@@ -412,7 +413,9 @@ footer:hover #footer {
     scale: 105%;
 }
 
-.LeftFullIMG section { padding: 20px; }
+.LeftFullIMG section {
+    padding: 20px;
+}
 
 .FlexDiv {
     overflow: hidden;
@@ -503,6 +506,14 @@ footer:hover #footer {
     background-color: #161b22;
     position: relative;
     bottom: -40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+#footer span {
+    font-size: 30px;
 }
 
 #collabMembers img {
@@ -527,25 +538,53 @@ footer:hover #footer {
 .mars-stats td:last-child {
     text-align: right;
 }
+
 /* Responsivitás telefonra*/
 @media screen and (max-width: 600px) {
-    body { grid-template-rows: auto 1fr 40px; }
+    body {
+        grid-template-rows: auto 1fr 40px;
+    }
+
     .main-visit-link:hover {
         background-color: rgba(10, 10, 100, 0.8);
         margin-left: 0;
         color: #b464ff;
     }
-    .FlexDiv {width: 100%; margin-bottom: 100px;}
-    #hdrIMG img { left: -50%; }
-    .LeftFullIMG img { rotate: 3deg; }
+
+    .FlexDiv {
+        width: 100%;
+        margin-bottom: 100px;
+    }
+
+    #hdrIMG img {
+        left: -50%;
+    }
+
+    .LeftFullIMG img {
+        rotate: 3deg;
+    }
+
     #MainText {
         box-shadow: inset 400px 0 0 0 #000;
         position: absolute;
         color: #fff;
     }
-    #footer { bottom: 0; }
-    #navbar a { padding: 0; }
-    #content { line-height: normal; }
+
+    #footer {
+        bottom: 0;
+    }
+
+    #footer span {
+        font-size: 20px;
+    }
+
+    #navbar a {
+        padding: 0;
+    }
+
+    #content {
+        line-height: normal;
+    }
 }
 
 @keyframes arrowBlink {
